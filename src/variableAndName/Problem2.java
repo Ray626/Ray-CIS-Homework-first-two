@@ -6,8 +6,8 @@ public class Problem2 {
         double e = 2.71828;
         String subject = "Computer Science";
         System.out.println("This is room # " + roomNum);
-        System.out.println("e is close to" + e);
-        System.out.println("I am learning about" + subject);
+        System.out.println("e is close to " + e);
+        System.out.println("I am learning about " + subject);
 
     }
 
