@@ -1,4 +1,4 @@
-package rockPaperScissors;
+package forAndWhileLoops;
 
 import java.util.Locale;
 import java.util.Scanner;
