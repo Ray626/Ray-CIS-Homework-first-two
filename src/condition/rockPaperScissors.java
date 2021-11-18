@@ -27,10 +27,12 @@ public class rockPaperScissors {
     }
     //This method decide either the player want to play again o quit the game. 0 = play again, 1 = quit
     static int playAgain(){
-        Scanner again = new Scanner(System.in);
         System.out.println("Do you want to play again? (Yes/No)");
-        String again_result = again.nextLine().toLowerCase(Locale.ROOT);
         while (true){
+        Scanner again = new Scanner(System.in);
+
+        String again_result = again.nextLine().toLowerCase(Locale.ROOT);
+
         if(again_result.equals("yes")){
             return 0;
         }if (again_result.equals("no")){
@@ -50,7 +52,7 @@ public class rockPaperScissors {
                 ██║  ██║╚██████╔╝╚██████╗██║  ██╗    ██║     ██║  ██║██║     ███████╗██║  ██║    ███████║╚██████╗██║███████║███████║╚██████╔╝██║  ██║███████║
                 ╚═╝  ╚═╝ ╚═════╝  ╚═════╝╚═╝  ╚═╝    ╚═╝     ╚═╝  ╚═╝╚═╝     ╚══════╝╚═╝  ╚═╝    ╚══════╝ ╚═════╝╚═╝╚══════╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝
                 """);
-        //Asking player to choose Rock, paper or scissors
+        //variables of Rock, paper and scissors
         String option ="""
                 Choose one:
                 1)Rock
@@ -118,7 +120,10 @@ public class rockPaperScissors {
                 """;
         //variable decide which user intend to play again or end the game
         int againOrNot;
+
+        //user's option
         System.out.println(option);
+
         //repeat if the user input is invalid
         label:
         while (true ){
@@ -127,53 +132,55 @@ public class rockPaperScissors {
             Random rand = new Random();
             int computerChoiceInt = rand.nextInt(3)+1;
             String computerChoiceStr = Integer.toString(computerChoiceInt);
+
             //Showing the graphical result of Rock, Paper, Scissors
             switch (the_player_choice) {
-                case "1":
+                case "1" -> {
                     System.out.println("You:\n" + rPS[0]);
                     System.out.println("Computer:\n" + rPS[computerChoiceInt - 1]);
                     System.out.println(result[winOrLose(the_player_choice, computerChoiceStr)]);
                     //get the int value of playAgain
                     againOrNot = playAgain();
                     //break the loop if player decide to quit
-                    if(againOrNot == 0){
-                        System.out.println(option);
-                        break;
-                    }
-                    else if (againOrNot == 1) {
+                    if (againOrNot == 1) {
                         System.out.println(gameOver);
+
                         break label;
                     }
-                case "2":
+                    //reprint the question if player decide to play again
+                    else if (againOrNot == 0) {
+                        System.out.println(option);
+                    }
+                }
+                case "2" -> {
                     System.out.println("You:\n" + rPS[1]);
                     System.out.println("Computer:\n" + rPS[computerChoiceInt - 1]);
                     System.out.println(result[winOrLose(the_player_choice, computerChoiceStr)]);
                     againOrNot = playAgain();
-                    if(againOrNot == 0){
-                        System.out.println(option);
-                        break;
-                    }
-                    else if (againOrNot == 1) {
+                    if (againOrNot == 1) {
                         System.out.println(gameOver);
                         break label;
+                    } else if (againOrNot == 0) {
+                        System.out.println(option);
                     }
-                case "3":
+                }
+                case "3" -> {
                     System.out.println("You:\n" + rPS[2]);
                     System.out.println("Computer:\n" + rPS[computerChoiceInt - 1]);
                     System.out.println(result[winOrLose(the_player_choice, computerChoiceStr)]);
                     againOrNot = playAgain();
-                    if(againOrNot == 0){
-                        System.out.println(option);
-                        break;
-                    }
-                    else if (againOrNot == 1) {
+                    if (againOrNot == 1) {
                         System.out.println(gameOver);
                         break label;
+                    } else if (againOrNot == 0) {
+                        System.out.println(option);
                     }
-                default:
-                    System.out.println("Your Choice is invalid, please enter the valid option");
-                    break;
+                }
+                default -> System.out.println("Your input is invalid, please enter again");
             }
+
+
+
         }
     }
 }
