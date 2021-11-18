@@ -123,7 +123,9 @@ public class rockPaperScissors {
 
         //user's option
         System.out.println(option);
-
+        //Variables count the winning rounds and the losing rounds
+        int win=0;
+        int lose=0;
         //repeat if the user input is invalid
         label:
         while (true ){
@@ -136,9 +138,16 @@ public class rockPaperScissors {
             //Showing the graphical result of Rock, Paper, Scissors
             switch (the_player_choice) {
                 case "1" -> {
-                    System.out.println("You:\n" + rPS[0]);
+                    System.out.println("Player:\n" + rPS[0]);
                     System.out.println("Computer:\n" + rPS[computerChoiceInt - 1]);
-                    System.out.println(result[winOrLose(the_player_choice, computerChoiceStr)]);
+                    int resultNum = winOrLose(the_player_choice, computerChoiceStr);
+                    System.out.println(result[resultNum]);
+                    if(resultNum==1){
+                        win++;
+                    }else if(resultNum==2){
+                        lose++;
+                    }
+                    System.out.println("Win: "+ win + "  Lose: " + lose);
                     //get the int value of playAgain
                     againOrNot = playAgain();
                     //break the loop if player decide to quit
@@ -153,9 +162,16 @@ public class rockPaperScissors {
                     }
                 }
                 case "2" -> {
-                    System.out.println("You:\n" + rPS[1]);
+                    System.out.println("Player:\n" + rPS[1]);
                     System.out.println("Computer:\n" + rPS[computerChoiceInt - 1]);
-                    System.out.println(result[winOrLose(the_player_choice, computerChoiceStr)]);
+                    int resultNum = winOrLose(the_player_choice, computerChoiceStr);
+                    System.out.println(result[resultNum]);
+                    if(resultNum==1){
+                        win++;
+                    }else if(resultNum==2){
+                        lose++;
+                    }
+                    System.out.println("Win: "+ win + "  Lose: " + lose);
                     againOrNot = playAgain();
                     if (againOrNot == 1) {
                         System.out.println(gameOver);
@@ -165,9 +181,16 @@ public class rockPaperScissors {
                     }
                 }
                 case "3" -> {
-                    System.out.println("You:\n" + rPS[2]);
+                    System.out.println("Player:\n" + rPS[2]);
                     System.out.println("Computer:\n" + rPS[computerChoiceInt - 1]);
-                    System.out.println(result[winOrLose(the_player_choice, computerChoiceStr)]);
+                    int resultNum = winOrLose(the_player_choice, computerChoiceStr);
+                    System.out.println(result[resultNum]);
+                    if(resultNum==1){
+                        win++;
+                    }else if(resultNum==2){
+                        lose++;
+                    }
+                    System.out.println("Win: "+ win + "  Lose: " + lose);
                     againOrNot = playAgain();
                     if (againOrNot == 1) {
                         System.out.println(gameOver);
