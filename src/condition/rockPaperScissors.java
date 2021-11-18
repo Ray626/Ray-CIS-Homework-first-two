@@ -107,7 +107,7 @@ public class rockPaperScissors {
              ██║    ██║   ██╚════██ ██ ╔══╝
              ███████╚██████ ╔██████ ████████
             """};
-        //
+        //pops up when quits the game
         String gameOver = """
                  ██████╗  █████╗ ███╗   ███╗███████╗     ██████╗ ██╗   ██╗███████╗██████╗
                 ██╔════╝ ██╔══██╗████╗ ████║██╔════╝    ██╔═══██╗██║   ██║██╔════╝██╔══██╗
@@ -133,13 +133,12 @@ public class rockPaperScissors {
                     System.out.println("You:\n" + rPS[0]);
                     System.out.println("Computer:\n" + rPS[computerChoiceInt - 1]);
                     System.out.println(result[winOrLose(the_player_choice, computerChoiceStr)]);
-                    //get the int value of
+                    //get the int value of playAgain
                     againOrNot = playAgain();
                     //break the loop if player decide to quit
                     if(againOrNot == 0){
                         System.out.println(option);
                         break;
-
                     }
                     else if (againOrNot == 1) {
                         System.out.println(gameOver);
@@ -153,7 +152,6 @@ public class rockPaperScissors {
                     if(againOrNot == 0){
                         System.out.println(option);
                         break;
-
                     }
                     else if (againOrNot == 1) {
                         System.out.println(gameOver);
@@ -167,7 +165,6 @@ public class rockPaperScissors {
                     if(againOrNot == 0){
                         System.out.println(option);
                         break;
-
                     }
                     else if (againOrNot == 1) {
                         System.out.println(gameOver);
@@ -177,9 +174,6 @@ public class rockPaperScissors {
                     System.out.println("Your Choice is invalid, please enter the valid option");
                     break;
             }
-
         }
-
-
     }
 }
