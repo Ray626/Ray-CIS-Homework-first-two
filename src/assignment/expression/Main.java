@@ -1,4 +1,4 @@
-package expression.assignment;
+package assignment.expression;
 
 public class Main {
     public static void main(String[] args){

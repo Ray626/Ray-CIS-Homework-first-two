@@ -1,4 +1,4 @@
-package forAndWhileLoops;
+package assignment.forAndWhileLoops;
 
 import java.util.Locale;
 import java.util.Scanner;
@@ -86,9 +86,9 @@ public class rockPaperScissors {
                 ---------\\     (__)
                           `-----"
                 """;
-        //array that stores rock paper and scissors
+        //assignment.array that stores rock paper and scissors
         String[] rPS = {rock, paper, scissors};
-        //array that stores result
+        //assignment.array that stores result
         String[] result = {"""
              ██████╗ ██████╗  █████╗ ██╗    ██╗
              ██╔══██╗██╔══██╗██╔══██╗██║    ██║

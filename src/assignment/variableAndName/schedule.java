@@ -1,6 +1,4 @@
-package variableAndName;
-
-import java.util.Arrays;
+package assignment.variableAndName;
 
 public class schedule {
     public static void main(String[] args) {

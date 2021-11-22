@@ -1,4 +1,4 @@
-package condition;
+package assignment.condition;
 
 
 import java.util.Locale;

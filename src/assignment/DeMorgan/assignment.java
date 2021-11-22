@@ -1,4 +1,4 @@
-package DeMorgan.assignment;
+package assignment.DeMorgan;
 
 public class assignment {
 

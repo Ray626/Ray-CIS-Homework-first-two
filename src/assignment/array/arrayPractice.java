@@ -1,8 +1,6 @@
-package array;
+package assignment.array;
 
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
 public class arrayPractice {
     public static void main(String[] args) {
@@ -25,10 +23,10 @@ public class arrayPractice {
             numArray2[i] = randNum1;
             numAverage += numArray2[i];
         }
-        System.out.println("First array: " + Arrays.toString(numArray1));
-        System.out.println(numCount + " of 1 generated in this array");
+        System.out.println("First assignment.array: " + Arrays.toString(numArray1));
+        System.out.println(numCount + " of 1 generated in this assignment.array");
 
-        System.out.println("Second array: " + Arrays.toString(numArray2));
+        System.out.println("Second assignment.array: " + Arrays.toString(numArray2));
 
         int temp = numArray2[swappingPosition1];
         numArray2[swappingPosition1] = numArray2[swappingPosition2];
@@ -41,7 +39,7 @@ public class arrayPractice {
 
         System.out.println("Reverse: " + Arrays.toString(numArray2Reverse));
 
-        System.out.println("Average of the second array: " + numAverage/10);
+        System.out.println("Average of the second assignment.array: " + numAverage/10);
 
     }
 }

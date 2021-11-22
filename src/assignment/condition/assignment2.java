@@ -1,4 +1,4 @@
-package condition;
+package assignment.condition;
 import java.util.Scanner;
 public class assignment2 {
     public static void main(String[] args) {
