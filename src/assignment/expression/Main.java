@@ -44,5 +44,7 @@ public class Main {
         System.out.println(((double) (14 / 2 + 3) * Math.sin(45) + 2) - Math.pow(Math.sqrt(25), 3));
         System.out.println(((7 + 3) * Math.sin(45) + 2) - Math.pow(5.0, 3));
         System.out.println((10 * Math.sin(45) + 2)- 125.0);
+        System.out.println(10 * 0.8509035245341184 + 2 -125.0);
+        System.out.println(-114.49096475465882);
     }
 }
