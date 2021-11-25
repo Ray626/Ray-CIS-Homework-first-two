@@ -37,13 +37,13 @@ public class methodAndArrayAssignment {
         for (int i = 0; i<numArray1.length; i++){
             numArray1[i] = i;
         }
-        System.out.println(Arrays.toString(numArray1));
+        System.out.println("Default: " + Arrays.toString(numArray1));
         numArray1 = arrayAppend(numArray1, 2);
-        System.out.println(Arrays.toString(numArray1));
+        System.out.println("Add: "+ Arrays.toString(numArray1));
         numArray1 = arrayPop(numArray1);
-        System.out.println(Arrays.toString(numArray1));
+        System.out.println("Pop: " + Arrays.toString(numArray1));
         numArray1 = arrayInsert(numArray1, 3 ,9);
-        System.out.println(Arrays.toString(numArray1));
+        System.out.println("Insert: " + Arrays.toString(numArray1));
 
     }
 }
