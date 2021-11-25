@@ -11,19 +11,38 @@ public class methodAndArrayAssignment {
         }
         return arrayAdd;
     }
-    static int[] arrayDelete(int[] theArray){
+    static int[] arrayPop(int[] theArray){
         int[] arrayDelete = new int[theArray.length-1];
         for (int i = 0; i< arrayDelete.length; i++){
-
+            arrayDelete[i] = theArray[i];
         }
         return arrayDelete;
     }
+    static int[] arrayInsert(int[] theArray, int index, int insertV){
+        int[] arrayInsert = new int[theArray.length+1];
+
+        for(int i = 0; i< index; i++){
+            arrayInsert[i] = theArray[i];
+
+        }
+        arrayInsert[index] = insertV;
+        for (int i = index+1; i< arrayInsert.length; i++){
+            arrayInsert[i] = theArray[i-1];
+        }
+        return arrayInsert;
+    }
     public static void main(String[] args) {
 
-        int[] numArray1 = new int[1];
-        numArray1[0] = 1;
+        int[] numArray1 = new int[5];
+        for (int i = 0; i<numArray1.length; i++){
+            numArray1[i] = i;
+        }
         System.out.println(Arrays.toString(numArray1));
         numArray1 = arrayAppend(numArray1, 2);
+        System.out.println(Arrays.toString(numArray1));
+        numArray1 = arrayPop(numArray1);
+        System.out.println(Arrays.toString(numArray1));
+        numArray1 = arrayInsert(numArray1, 3 ,9);
         System.out.println(Arrays.toString(numArray1));
 
     }
