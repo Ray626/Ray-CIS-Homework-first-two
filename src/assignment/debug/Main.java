@@ -25,7 +25,6 @@ public class Main {
             int num = 0;
             for(int i = 0; i<s.length();i++){
                 if(sSplit[i].equals("b") && i+2 < s.length()){
-
                     if(sSplit[i+1].equals("o")){
                         if(sSplit[i+2].equals("b")){
                             num += 1;
@@ -46,7 +45,6 @@ public class Main {
                 String numberThree = "";
                 int num = i;
                 char firstChar = s.charAt(num);
-
                 numberThree += firstChar;
                 if (position < s.length()){
                     while(firstChar <= s.charAt(position)){
@@ -60,9 +58,7 @@ public class Main {
                         position++;
                     }
                 }
-
                 arrayTrend[i] = numberThree;
-
             }
             int num = 0;
             String theFinal = "";
@@ -71,9 +67,7 @@ public class Main {
                     theFinal = value;
                     num = value.length();
                 }
-
             }
-
             return theFinal;
         }
         public static void main(String[] args) {
