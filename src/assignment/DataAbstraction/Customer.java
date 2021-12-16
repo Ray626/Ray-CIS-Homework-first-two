@@ -79,22 +79,34 @@ public class Customer {
      */
     public double withdraw(double amt, Date date, String account){
         //your code here
-
-        if (checkOverdraft(amt,account)){
-            withdraws.add(new Withdraw(amt, date, account));
-            if (account.equals(CHECKING)){
-                checkBalance -= amt;
-                return checkBalance;
-            }else if (account.equals(SAVING)){
-                savingBalance -= amt;
-                return savingBalance;
+            if (checkOverdraft(amt,account)){
+                if (account.equals(CHECKING)){
+                    if(amt>0){
+                        checkBalance -= amt;
+                        withdraws.add(new Withdraw(amt, date, account));
+                    }
+                    return checkBalance;
+                }else if (account.equals(SAVING)){
+                    if(amt>0){
+                        savingBalance -= amt;
+                        withdraws.add(new Withdraw(amt, date, account));
+                    }
+                    return savingBalance;
+                }else{
+                    return 0;
+                }
             }else{
                 return 0;
             }
-        }else{
-            return 0;
         }
-    }
+
+    /**
+     * The method checks the amount of withdraw is overdraft or not. If it is,
+     * return false. If it is not, return ture.
+     * @param amt
+     * @param account
+     * @return
+     */
     private boolean checkOverdraft(double amt, String account){
         //your code here
         if (account.equals(CHECKING)){

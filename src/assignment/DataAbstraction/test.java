@@ -11,9 +11,6 @@ public class test {
     @Rule
     public ErrorCollector testDA= new ErrorCollector();
 
-    /**
-     * Test of customer.deposit.
-     */
     @Test
     public void testDeposit(){
         Date date = new Date();
@@ -41,6 +38,24 @@ public class test {
     public void testWithdraw(){
         Date date = new Date();
         Customer tW = new Customer("Ray",1234567,0,500);
+        double tW1 = tW.withdraw(100,date,"Saving");
+        assertEquals(400,tW1,0);
+        double tW2 = tW.withdraw(-100,date,"Saving");
+        assertEquals(400,tW2,0);
+        double tW3= tW.withdraw(600,date,"Saving");
+        assertEquals(0,tW3,0);
+    }
+    @Test
+    public void testDepositToString(){
+        Date date = new Date();
+        Deposit tDTS = new Deposit(400,date,"Saving");
+        assertEquals("Deposit of: $" + 400.0 + "Date: " + date + " into account: Saving",tDTS.toString());
+    }
+    @Test
+    public void testWithdrawToString(){
+        Date date = new Date();
+        Withdraw tWTS = new Withdraw(2333333333333333333L,date,"Checking");
+        assertEquals("Withdraw of: $" + 2333333333333333333.0 + "Date: " + date + " from account: Checking",tWTS.toString());
     }
 
 }
