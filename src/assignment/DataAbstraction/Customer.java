@@ -35,7 +35,7 @@ public class Customer {
         this.savingBalance = savingDeposit;
         this.savingRate = 0;
         deposits = new ArrayList<>();
-        withdraws = new ArrayList<>();
+        withdraws = new ArrayList<Withdraw>();
 
     }
 
@@ -51,22 +51,22 @@ public class Customer {
     public double deposit(double amt, Date date, String account){
         //your code here
 
-            if (account.equals(CHECKING)){
-                if (!(amt < 0)) {
-                    checkBalance += amt;
-                    deposits.add(new Deposit(amt,date, account));
-                }
-                return checkBalance;
-            }else if (account.equals(SAVING)){
-                if(!(amt<0)){
-                    savingBalance += amt;
-                    deposits.add(new Deposit(amt,date, account));
-                }
-                return savingBalance;
-            }else{
-                return 0;
+        if (account.equals(CHECKING)){
+            if (!(amt < 0)) {
+                checkBalance += amt;
+                deposits.add(new Deposit(amt,date, account));
             }
+            return checkBalance;
+        }else if (account.equals(SAVING)){
+            if(!(amt<0)){
+                savingBalance += amt;
+                deposits.add(new Deposit(amt,date, account));
+            }
+            return savingBalance;
+        }else{
+            return 0;
         }
+    }
 
     /**
      * check the withdraw amounts are either overdraft or not. If it is, return -1.
@@ -79,26 +79,28 @@ public class Customer {
      */
     public double withdraw(double amt, Date date, String account){
         //your code here
-            if (checkOverdraft(amt,account)){
-                if (account.equals(CHECKING)){
-                    if(amt>0){
-                        checkBalance -= amt;
-                        withdraws.add(new Withdraw(amt, date, account));
-                    }
-                    return checkBalance;
-                }else if (account.equals(SAVING)){
-                    if(amt>0){
-                        savingBalance -= amt;
-                        withdraws.add(new Withdraw(amt, date, account));
-                    }
-                    return savingBalance;
-                }else{
-                    return 0;
+        if (checkOverdraft(amt,account)){
+            if (account.equals(CHECKING)){
+                if(amt>0){
+                    checkBalance -= amt;
+                    withdraws.add(new Withdraw(amt, date, account));
                 }
+                return checkBalance;
+            }else if (account.equals(SAVING)){
+                if(amt>0){
+                    savingBalance -= amt;
+                    Withdraw withdrawOne = new Withdraw(amt, date, account);
+                    withdraws.add(new Withdraw(amt, date, account));
+                }
+                return savingBalance;
             }else{
                 return 0;
             }
+        }else{
+            return 0;
         }
+    }
+
 
     /**
      * The method checks the amount of withdraw is overdraft or not. If it is,
