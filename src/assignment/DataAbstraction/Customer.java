@@ -35,7 +35,7 @@ public class Customer {
         this.savingBalance = savingDeposit;
         this.savingRate = 0;
         deposits = new ArrayList<>();
-        withdraws = new ArrayList<Withdraw>();
+        withdraws = new ArrayList<>();
 
     }
 
@@ -89,7 +89,6 @@ public class Customer {
             }else if (account.equals(SAVING)){
                 if(amt>0){
                     savingBalance -= amt;
-                    Withdraw withdrawOne = new Withdraw(amt, date, account);
                     withdraws.add(new Withdraw(amt, date, account));
                 }
                 return savingBalance;
