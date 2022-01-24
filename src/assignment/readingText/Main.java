@@ -16,8 +16,8 @@ public class Main {
 
         for (int index = 0; index < wordLine.size(); index++) {
             String line = wordLine.get(index);
-            line = line.replaceAll("\\p{Punct}", " ");
-            String[] wordInLine = line.split("\\s");
+            //line = line.replaceAll("\\p{Punct}", " ");
+            String[] wordInLine = line.replaceAll("\\p{Punct}", "").split("\\s");
             for (int i = 0; i < wordInLine.length; i++){
                 if(wordInLine[i].equals(word)){
                     System.out.println(word.toUpperCase(Locale.ROOT) + " appeared at the index position "  + i + " on the " + (index+1) + " ine");
