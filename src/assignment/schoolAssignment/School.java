@@ -8,8 +8,8 @@ import java.util.ArrayList;
  * to display all the teachers and students
 */
 public class School {
-    ArrayList<Teacher> teachers = new ArrayList<>();
-    ArrayList<Student> students = new ArrayList<>();
+    ArrayList<Teacher> teachers;
+    ArrayList<Student> students;
     private String schoolOne;
     private String schoolTwo;
     private String schoolThree;
@@ -18,6 +18,9 @@ public class School {
         this.schoolOne = schoolOne;
         this.schoolTwo = schoolTwo;
         this.schoolThree = schoolThree;
+        this.students = new ArrayList<>();
+        this.teachers = new ArrayList<>();
+
     }
 
     public String getSchoolOne() {
